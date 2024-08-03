@@ -46,8 +46,8 @@ const SuggestRecipes = () => {
       });
       setRecipes(response.data.map(recipe => recipe.recipe));
     } catch (error) {
-      console.error('Error fetching recipes:', error.response ? error.response.data : error.message);
-    }finally {
+      console.error('Error fetching recipes:', error);
+    } finally {
       setLoading(false);
     }
   };
