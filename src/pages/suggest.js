@@ -38,7 +38,7 @@ const SuggestRecipes = () => {
 
   const handleFetchSuggestions = async () => {
     if (!ingredients.trim()) return;
-  
+
     setLoading(true);
     try {
       const response = await axios.post('/api/recipes', { 
@@ -46,12 +46,8 @@ const SuggestRecipes = () => {
       });
       setRecipes(response.data.map(recipe => recipe.recipe));
     } catch (error) {
-      console.error('Error fetching recipes:', {
-        message: error.message,
-        response: error.response ? error.response.data : null,
-        stack: error.stack,
-      });
-    } finally {
+      console.error('Error fetching recipes:', error.response ? error.response.data : error.message);
+    }finally {
       setLoading(false);
     }
   };
