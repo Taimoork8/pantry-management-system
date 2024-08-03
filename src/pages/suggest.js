@@ -1,64 +1,8 @@
-// // src/pages/suggest.js
-// import { useState } from 'react';
-// import axios from 'axios';
+
 import Navbar from '../components/Navbar';
-
-// const SuggestRecipes = () => {
-//   const [ingredients, setIngredients] = useState([]);
-//   const [recipes, setRecipes] = useState([]);
-//   const [loading, setLoading] = useState(false);
-
-//   const handleFetchSuggestions = async () => {
-//     if (ingredients.length === 0) return; // Avoid fetching if no ingredients
-
-//     setLoading(true);
-//     try {
-//       const response = await axios.post('/api/recipes', { ingredients });
-//       setRecipes(response.data.map(recipe => recipe.recipe));
-//     } catch (error) {
-//       console.error('Error fetching recipes:', error);
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   const handleKeyDown = (e) => {
-//     if (e.key === 'Enter') {
-//       handleFetchSuggestions();
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <Navbar />
-//       <h1>Suggest Recipes</h1>
-//       <input
-//         type="text"
-//         placeholder="Enter ingredients separated by commas"
-//         onChange={(e) => setIngredients(e.target.value.split(',').map(item => item.trim()))}
-//         onKeyDown={handleKeyDown} // Listen for Enter key press
-//         disabled={loading} // Disable input while fetching
-//       />
-//       <button onClick={handleFetchSuggestions} disabled={loading}>Get Recipe Suggestions</button>
-//       {loading && <p>Loading...</p>}
-//       <ul>
-//         {recipes.map((recipe, index) => (
-//           <li key={index}>
-//             <h2>{recipe.label}</h2>
-//             <img src={recipe.image} alt={recipe.label} width="200" />
-//             <a href={recipe.url} target="_blank" rel="noopener noreferrer">View Recipe</a>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { 
-  AppBar,
-  Toolbar,
   Typography,
   Container, 
   TextField, 
@@ -94,7 +38,7 @@ const SuggestRecipes = () => {
 
   const handleFetchSuggestions = async () => {
     if (!ingredients.trim()) return;
-
+  
     setLoading(true);
     try {
       const response = await axios.post('/api/recipes', { 
@@ -102,7 +46,11 @@ const SuggestRecipes = () => {
       });
       setRecipes(response.data.map(recipe => recipe.recipe));
     } catch (error) {
-      console.error('Error fetching recipes:', error);
+      console.error('Error fetching recipes:', {
+        message: error.message,
+        response: error.response ? error.response.data : null,
+        stack: error.stack,
+      });
     } finally {
       setLoading(false);
     }
