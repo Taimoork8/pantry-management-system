@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pantry Management System
+
+This is a [Pantry Management System](https://github.com/your-username/pantry-management-system) project bootstrapped with [Next.js](https://nextjs.org/) and [Firebase](https://firebase.google.com/).
 
 ## Getting Started
 
@@ -9,28 +11,58 @@ npm run dev
 # or
 yarn dev
 # or
-pnpm dev
+npm dev
 # or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
+Edit Recipes: Modify existing recipes in your pantry.
+Delete Recipes: Remove recipes from your pantry.
+Search Recipes: Find recipes using the Edamam Search API.
+
+## Contributing
+We welcome contributions to improve the Pantry Management System! To contribute:
+
+Fork the Repository: Click the "Fork" button at the top right of the repository page to create your own copy.
+
+Create a Feature Branch: Create a new branch for your feature or fix:
+
+```bash
+git checkout -b feature/your-feature-name
+```
+Make Changes: Implement your feature or fix.
+Commit Your Changes: Commit your changes with a descriptive message:
+
+```bash
+git add .
+git commit -m "Add feature: description"
+
+```
+Push to Your Fork: Push your changes to your fork:
+
+```bash
+git push origin feature/your-feature-name
+```
+Create a Pull Request: Open a pull request on the original repository to propose your changes.
 
 ## Learn More
+To learn more about Next.js and its capabilities, check out the following resources:
 
-To learn more about Next.js, take a look at the following resources:
+Next.js Documentation - Learn about Next.js features and API.
+Learn Next.js - An interactive Next.js tutorial.
+Next.js GitHub Repository - Your feedback and contributions are welcome!
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Feel free to open issues or submit pull requests if you encounter any problems or have suggestions for improvements. Thank you for your contributions!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
 
-## Deploy on Vercel
+You can copy and paste this content into your `README.md` file. Let me know if you need any more changes!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
