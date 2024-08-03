@@ -41,7 +41,7 @@ const SuggestRecipes = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post(' https://api.edamam.com/api/recipes/', { 
+      const response = await axios.post('/api/recipes', { 
         ingredients: ingredients.split(',').map(item => item.trim()) 
       });
       setRecipes(response.data.map(recipe => recipe.recipe));
